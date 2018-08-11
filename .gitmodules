@@ -1,0 +1,3 @@
+[submodule "russian-troll-tweets"]
+	path = russian-troll-tweets
+	url = https://github.com/fivethirtyeight/russian-troll-tweets.git
