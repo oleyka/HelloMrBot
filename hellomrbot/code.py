@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import json
+import logging
 import requests
 import sys
 
@@ -23,7 +24,7 @@ def load_creds(fname):
     except:
         print("Some crappy error:", sys.exc_info()[0])
         raise
-    print(CREDS)
+    logging.debug(CREDS)
 
 
 def get_user(handle):
@@ -31,5 +32,10 @@ def get_user(handle):
 
 
 if __name__ == "__main__":
+    logging.basicConfig(
+        format='%(levelname)s:%(message)s',
+        level=logging.DEBUG
+    )
+
     load_creds("my-data/creds.json")
     get_user("oley")
